@@ -1,5 +1,5 @@
-*.suo
-*.sln.docstates
-*.bin
-*.obj
+.suo
+.sln.docstates
+.bin
+.obj
 .internal_logs
