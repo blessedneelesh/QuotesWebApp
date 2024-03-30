@@ -1,2 +1,5 @@
-.vs
-.suo
+*.suo
+*.sln.docstates
+*.bin
+*.obj
+.internal_logs
