@@ -6,3 +6,7 @@
 2024-03-30 15:58:09.6339 DEBUG Here is debug message from our values controller.
 2024-03-30 15:58:09.6502 WARN Here is warn message from our values controller.
 2024-03-30 15:58:09.6502 ERROR Here is an error message from our values controller.
+2024-03-30 16:28:52.8063 INFO Here is info message from our values controller.
+2024-03-30 16:28:52.8560 DEBUG Here is debug message from our values controller.
+2024-03-30 16:28:52.8560 WARN Here is warn message from our values controller.
+2024-03-30 16:28:52.8560 ERROR Here is an error message from our values controller.
