@@ -10,3 +10,6 @@ D:\quotes\quotesWebApp\QuotesBE\Contracts\obj\Debug\net6.0\Contracts.dll
 D:\quotes\quotesWebApp\QuotesBE\Contracts\obj\Debug\net6.0\refint\Contracts.dll
 D:\quotes\quotesWebApp\QuotesBE\Contracts\obj\Debug\net6.0\Contracts.pdb
 D:\quotes\quotesWebApp\QuotesBE\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+D:\quotes\quotesWebApp\QuotesBE\Contracts\bin\Debug\net6.0\Shared.dll
+D:\quotes\quotesWebApp\QuotesBE\Contracts\bin\Debug\net6.0\Shared.pdb
+D:\quotes\quotesWebApp\QuotesBE\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete

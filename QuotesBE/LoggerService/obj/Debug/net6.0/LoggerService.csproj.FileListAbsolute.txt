@@ -13,3 +13,5 @@ D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Debug\net6.0\LoggerService.dll
 D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Debug\net6.0\refint\LoggerService.dll
 D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Debug\net6.0\LoggerService.pdb
 D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Debug\net6.0\ref\LoggerService.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Debug\net6.0\Shared.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Debug\net6.0\Shared.pdb

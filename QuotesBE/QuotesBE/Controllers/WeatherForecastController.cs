@@ -1,10 +1,11 @@
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
+using Repository;
 
 namespace QuotesBE.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -17,6 +18,7 @@ namespace QuotesBE.Controllers
             _logger = logger;
         }
 
+
         [HttpGet] public IEnumerable<string> Get() {
             _logger.LogInfo("Here is info message from our values controller."); 
             _logger.LogDebug("Here is debug message from our values controller.");
@@ -24,5 +26,8 @@ namespace QuotesBE.Controllers
             _logger.LogError("Here is an error message from our values controller.");
             return new string[] { "value1", "value2" }; }
         //cheking
+
     }
+
+  
 }
