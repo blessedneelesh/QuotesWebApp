@@ -35,18 +35,48 @@ namespace Service
 
         }
 
-        public (List<QuoteDTO> fighters, MetaData metaData) GetAllQuotes(QuoteParameters quoteParameters)
+        public (List<QuoteDTO> quote, MetaData metaData) GetAllQuotes(QuoteParameters quoteParameters)
         {
             try
             {
-                var fightersWithMetadata = _repository.Quote.GetAllQuote(quoteParameters);
+                var quotesWithMetadata = _repository.Quote.GetAllQuote(quoteParameters);
 
                 // var fightersDto = _repository.Fighter.GetAllUFCFighters(fightersWithMetadata);
-                return (quote: fightersWithMetadata, metaData: fightersWithMetadata.MetaData);
+                return (quote: quotesWithMetadata, metaData: quotesWithMetadata.MetaData);
             }
             catch (Exception ex)
             {
                 _logger.LogError("Something went wrong in the " + nameof(GetAllQuotes) + " service method " + ex);
+                throw;
+            }
+        }
+
+        public (List<QuoteDTO> quote, MetaData metaData) GetSearchResult(SearchParameter searchParameters)
+        {
+            try
+            {
+                var quotesWithMetadata = _repository.Quote.SearchQuote(searchParameters);
+
+                // var fightersDto = _repository.Fighter.GetAllUFCFighters(fightersWithMetadata);
+                return (quote: quotesWithMetadata, metaData: quotesWithMetadata.MetaData);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Something went wrong in the " + nameof(GetSearchResult) + " service method " + ex);
+                throw;
+            }
+        }
+
+        public List<CategoryDTO> GetAllCategory()
+        {
+            try
+            {
+                var category = _repository.Quote.GetCategory();
+                return category;
+            
+            }catch(Exception ex)
+            {
+                _logger.LogError("Something went wrong in the " + nameof(GetAllCategory) + " service method " + ex);
                 throw;
             }
         }

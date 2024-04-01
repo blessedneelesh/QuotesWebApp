@@ -54,14 +54,15 @@ namespace Presentation.Controllers
 
             }
         }
-/*
+
         [HttpGet]
-        public IActionResult DistinctCountries()
+        public IActionResult SearchQuote([FromQuery] SearchParameter searchParameters)
         {
             try
             {
-                var countries = _service.FighterService.GetDistinctCountries();
-                return Ok(countries);
+                var (quote, metaData) = _service.QuoteService.GetSearchResult(searchParameters);
+                Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metaData));
+                return Ok(quote);
 
             }
             catch (Exception ex)
@@ -69,6 +70,22 @@ namespace Presentation.Controllers
                 return StatusCode(500, "Internal server error");
 
             }
-        }*/
+        }
+
+        [HttpGet]
+        public IActionResult Categories()
+        {
+            try
+            {
+                var category = _service.QuoteService.GetAllCategory();
+                return Ok(category);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+
+            }
+        }
     }
 }

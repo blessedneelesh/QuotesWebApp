@@ -16,6 +16,14 @@ namespace Repository.Models.DataLayer
         {
         }
 
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; } = null!;
+        public virtual DbSet<AspNetRoleAspNetUser> AspNetRoleAspNetUsers { get; set; } = null!;
+        public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; } = null!;
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; } = null!;
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; } = null!;
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; } = null!;
+        public virtual DbSet<AspNetUserQuotess> AspNetUserQuotesses { get; set; } = null!;
+        public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Quotess> Quotesses { get; set; } = null!;
 
@@ -29,6 +37,74 @@ namespace Repository.Models.DataLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetRole>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedName] IS NOT NULL)");
+            });
+
+            modelBuilder.Entity<AspNetRoleAspNetUser>(entity =>
+            {
+                entity.HasKey(e => new { e.RoleId, e.UserId });
+            });
+
+            modelBuilder.Entity<AspNetUser>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
+
+                entity.HasMany(d => d.Quotes)
+                    .WithMany(p => p.Userrs)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "UserQuote",
+                        l => l.HasOne<Quotess>().WithMany().HasForeignKey("QuoteId").OnDelete(DeleteBehavior.ClientSetNull),
+                        r => r.HasOne<AspNetUser>().WithMany().HasForeignKey("UserrId").OnDelete(DeleteBehavior.ClientSetNull),
+                        j =>
+                        {
+                            j.HasKey("UserrId", "QuoteId").HasName("PK__UserQuot__02488940651555EC");
+
+                            j.ToTable("UserQuote");
+
+                            j.HasIndex(new[] { "QuoteId" }, "IX_UserQuote_quote_id");
+
+                            j.IndexerProperty<string>("UserrId").HasColumnName("userr_id");
+
+                            j.IndexerProperty<int>("QuoteId").HasColumnName("quote_id");
+                        });
+
+                entity.HasMany(d => d.Roles)
+                    .WithMany(p => p.Users)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "AspNetUserRole",
+                        l => l.HasOne<AspNetRole>().WithMany().HasForeignKey("RoleId"),
+                        r => r.HasOne<AspNetUser>().WithMany().HasForeignKey("UserId"),
+                        j =>
+                        {
+                            j.HasKey("UserId", "RoleId");
+
+                            j.ToTable("AspNetUserRoles");
+
+                            j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
+                        });
+            });
+
+            modelBuilder.Entity<AspNetUserLogin>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+            });
+
+            modelBuilder.Entity<AspNetUserQuotess>(entity =>
+            {
+                entity.HasKey(e => new { e.QuoteId, e.UserrId });
+            });
+
+            modelBuilder.Entity<AspNetUserToken>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
+            });
+
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.Property(e => e.CategoryId).ValueGeneratedNever();

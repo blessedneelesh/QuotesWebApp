@@ -11,6 +11,8 @@ namespace Service.Contracts
     public interface IQuoteService
     {
         List<QuoteDTO> GetQuote();
-        (List<QuoteDTO> fighters, MetaData metaData) GetAllQuotes(QuoteParameters quoteParameters);
+        (List<QuoteDTO> quote, MetaData metaData) GetAllQuotes(QuoteParameters quoteParameters);
+        List<CategoryDTO> GetAllCategory();
+        (List<QuoteDTO> quote, MetaData metaData) GetSearchResult(SearchParameter searchParameters);
     }
 }

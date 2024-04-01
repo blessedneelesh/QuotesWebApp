@@ -12,5 +12,7 @@ namespace Contracts
     {
         List<QuoteDTO> GetAllQuote();
         PagedList<QuoteDTO> GetAllQuote(QuoteParameters quoteParameters);
+        List<CategoryDTO> GetCategory();
+        PagedList<QuoteDTO> SearchQuote(SearchParameter searchParameters);
     }
 }

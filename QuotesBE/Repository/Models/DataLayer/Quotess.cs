@@ -7,8 +7,14 @@ using Microsoft.EntityFrameworkCore;
 namespace Repository.Models.DataLayer
 {
     [Table("Quotess")]
+    [Index("CategoryIdFk", Name = "IX_Quotess_category_id_fk")]
     public partial class Quotess
     {
+        public Quotess()
+        {
+            Userrs = new HashSet<AspNetUser>();
+        }
+
         [Key]
         [Column("quote_id")]
         public int QuoteId { get; set; }
@@ -24,5 +30,9 @@ namespace Repository.Models.DataLayer
         [ForeignKey("CategoryIdFk")]
         [InverseProperty("Quotesses")]
         public virtual Category? CategoryIdFkNavigation { get; set; }
+
+        [ForeignKey("QuoteId")]
+        [InverseProperty("Quotes")]
+        public virtual ICollection<AspNetUser> Userrs { get; set; }
     }
 }

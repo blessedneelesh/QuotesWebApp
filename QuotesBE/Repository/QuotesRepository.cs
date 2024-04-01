@@ -53,7 +53,6 @@ namespace Repository
                 query = query.Where(e => e.Name.ToLower().Contains(lowerCaseTerm));
             }*/
 
-
             var lst = query.Select(n =>
              new QuoteDTO
              {
@@ -65,5 +64,43 @@ namespace Repository
             return PagedList<QuoteDTO>.ToPagedList(lst, quoteParameters.PageNumber, quoteParameters.PageSize);
 
         }
+
+        public PagedList<QuoteDTO> SearchQuote(SearchParameter searchParameters)
+        {
+            IQueryable<Quotess> query = dbContext.Quotesses;
+
+            if (!string.IsNullOrWhiteSpace(searchParameters.SearchTerm))
+            {
+                var lowerCaseTerm = searchParameters.SearchTerm.ToLower();
+                query = query.Where(e => 
+                    e.QuoteContent.ToLower().Contains(lowerCaseTerm)
+                    ||
+                    e.Author.ToLower().Contains(lowerCaseTerm));
+            }
+
+            var lst = query.Select(n =>
+             new QuoteDTO
+             {
+                 quote_id = n.QuoteId,
+                 quote_content = n.QuoteContent,
+                 author = n.Author,
+                 category_id = n.CategoryIdFk
+             });
+            return PagedList<QuoteDTO>.ToPagedList(lst, searchParameters.PageNumber, searchParameters.PageSize);
+
+        }
+
+
+        public List<CategoryDTO> GetCategory()
+        {
+            var categoryLst = (from n in dbContext.Categories
+                            select new CategoryDTO
+                            {
+                                category_id = n.CategoryId,
+                                category_name = n.CategoryName
+                            }).ToList();
+            return categoryLst;
+        }
+
     }
 }

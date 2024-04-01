@@ -86,3 +86,8 @@ D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.Extensions.D
 D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Presentation.pdb
+D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\quotes\quotesWebApp\QuotesBE\QuotesBE\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
