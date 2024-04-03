@@ -15,3 +15,7 @@ D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\refint\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.pdb
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\ref\Presentation.dll
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.dll
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.dll
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.pdb
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.pdb

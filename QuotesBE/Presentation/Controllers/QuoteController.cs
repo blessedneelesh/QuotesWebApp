@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+//using Repository.Models.DataLayer;
 using Service.Contracts;
+using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 using System;
 using System.Collections.Generic;
@@ -85,6 +89,37 @@ namespace Presentation.Controllers
             {
                 return StatusCode(500, "Internal server error");
 
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetFavourite([FromQuery] FavouriteParameters favouriteParameters)
+        {
+            try
+            {
+                var (quote, metaData) = _service.QuoteService.GetUserFavourite(favouriteParameters);
+                Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metaData));
+                return Ok(quote);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
+
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<UserQuoteDTO> Favourite([FromBody] UserQuoteCreationDTO value)
+        {
+            try
+            {
+                _service.QuoteService.CreateUserQuote(value);
+                return CreatedAtAction(nameof(GetFavourite), new { quoteContent = value.quote_id }, value);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error");
             }
         }
     }

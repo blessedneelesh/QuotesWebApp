@@ -5,12 +5,13 @@ using Shared.RequestFeatures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class QuotesRepository: IQuotesRepository
+    public class QuotesRepository : IQuotesRepository
     {
         private readonly QuotesContext dbContext;
 
@@ -24,7 +25,7 @@ namespace Repository
             // var query = UFCQuery.selectUFCFighterQuery;
 
             var lst = (from n in dbContext.Quotesses
-                       where n.CategoryIdFk==1
+                       where n.CategoryIdFk == 1
                        select new QuoteDTO   // where n.Division == fighterParameters.Division
                        {
                            quote_id = n.QuoteId,
@@ -46,8 +47,8 @@ namespace Repository
           /*  if (!string.IsNullOrEmpty(quoteParameters.Country))
             {
                 query = query.Where(div => div.Country == quoteParameters.Country);
-            }*/
-           /* if (!string.IsNullOrWhiteSpace(fighterParameters.SearchTerm))
+            }
+            if (!string.IsNullOrWhiteSpace(fighterParameters.SearchTerm))
             {
                 var lowerCaseTerm = fighterParameters.SearchTerm.ToLower();
                 query = query.Where(e => e.Name.ToLower().Contains(lowerCaseTerm));
@@ -72,7 +73,7 @@ namespace Repository
             if (!string.IsNullOrWhiteSpace(searchParameters.SearchTerm))
             {
                 var lowerCaseTerm = searchParameters.SearchTerm.ToLower();
-                query = query.Where(e => 
+                query = query.Where(e =>
                     e.QuoteContent.ToLower().Contains(lowerCaseTerm)
                     ||
                     e.Author.ToLower().Contains(lowerCaseTerm));
@@ -94,13 +95,34 @@ namespace Repository
         public List<CategoryDTO> GetCategory()
         {
             var categoryLst = (from n in dbContext.Categories
-                            select new CategoryDTO
-                            {
-                                category_id = n.CategoryId,
-                                category_name = n.CategoryName
-                            }).ToList();
+                               select new CategoryDTO
+                               {
+                                   category_id = n.CategoryId,
+                                   category_name = n.CategoryName
+                               }).ToList();
             return categoryLst;
         }
 
+        public PagedList<UserQuoteDTO> GetFavourite(FavouriteParameters favouriteParameters)
+        {
+            var lst = (from n in dbContext.UserQuotes
+                       join m in dbContext.Quotesses on
+                       n.QuoteId equals m.QuoteId
+                       where n.UserrId == favouriteParameters.user_id
+                       select new UserQuoteDTO
+                       {
+                           userId = n.UserrId,
+                           quoteId = n.QuoteId,
+                           quoteContent=m.QuoteContent
+                       }).ToList();
+            return PagedList<UserQuoteDTO>.ToPagedList(lst, favouriteParameters.PageNumber, favouriteParameters.PageSize);
+        }
+
+        public void PostFavourite(UserQuoteCreationDTO value)
+        {
+            UserQuote userQuote = new UserQuote(value.user_id, value.quote_id);
+            dbContext.UserQuotes.Add(userQuote);
+            dbContext.SaveChanges();
+        }
     }
 }

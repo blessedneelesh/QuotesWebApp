@@ -80,5 +80,34 @@ namespace Service
                 throw;
             }
         }
+
+        public (List<UserQuoteDTO> quote, MetaData metaData) GetUserFavourite(FavouriteParameters favouriteParameters)
+        {
+            try
+            {
+                var quotesWithMetadata = _repository.Quote.GetFavourite(favouriteParameters);
+
+                // var fightersDto = _repository.Fighter.GetAllUFCFighters(fightersWithMetadata);
+                return (quote: quotesWithMetadata, metaData: quotesWithMetadata.MetaData);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Something went wrong in the " + nameof(GetUserFavourite) + " service method " + ex);
+                throw;
+            }
+        }
+
+        public UserQuoteDTO CreateUserQuote(UserQuoteCreationDTO value)
+        {
+            try
+            {
+                _repository.Quote.PostFavourite(value);
+                return new UserQuoteDTO(value.user_id, value.quote_id);
+            }catch(Exception ex)
+            {
+                _logger.LogError("Something went wrong in the " + nameof(CreateUserQuote) + " service method " + ex);
+                throw;
+            }
+        }
     }
 }

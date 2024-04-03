@@ -16,7 +16,7 @@ namespace Repository
         public RepositoryManager(QuotesContext dbContext)
         {
             _dbContext = dbContext;
-            _quoteRepository = new Lazy<IQuotesRepository>(() => new QuotesRepository(_dbContext));
+           _quoteRepository = new Lazy<IQuotesRepository>(() => new QuotesRepository(_dbContext));
         }
         public IQuotesRepository Quote => _quoteRepository.Value;
     }

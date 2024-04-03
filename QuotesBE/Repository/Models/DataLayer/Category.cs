@@ -18,9 +18,9 @@ namespace Repository.Models.DataLayer
         public int CategoryId { get; set; }
         [Column("category_name")]
         [StringLength(50)]
-        public string? CategoryName { get; set; }
+        public string CategoryName { get; set; }
 
-        [InverseProperty("CategoryIdFkNavigation")]
+        [InverseProperty(nameof(Quotess.CategoryIdFkNavigation))]
         public virtual ICollection<Quotess> Quotesses { get; set; }
     }
 }

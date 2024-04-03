@@ -152,6 +152,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\quotes\\quotesWebApp\\QuotesBE\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\quotes\\quotesWebApp\\QuotesBE\\Repository\\Repository.csproj"
+              },
               "D:\\quotes\\quotesWebApp\\QuotesBE\\Service.Contracts\\Service.Contracts.csproj": {
                 "projectPath": "D:\\quotes\\quotesWebApp\\QuotesBE\\Service.Contracts\\Service.Contracts.csproj"
               }
@@ -168,6 +171,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.2.5, )"

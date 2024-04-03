@@ -14,5 +14,7 @@ namespace Service.Contracts
         (List<QuoteDTO> quote, MetaData metaData) GetAllQuotes(QuoteParameters quoteParameters);
         List<CategoryDTO> GetAllCategory();
         (List<QuoteDTO> quote, MetaData metaData) GetSearchResult(SearchParameter searchParameters);
+       (List<UserQuoteDTO> quote, MetaData metaData) GetUserFavourite(FavouriteParameters favouriteParameters);
+        UserQuoteDTO CreateUserQuote(UserQuoteCreationDTO value);
     }
 }
