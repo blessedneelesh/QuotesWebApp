@@ -1,11 +1,17 @@
 # Description: This repository consists of two projects: ASP.NET Core Web API and React.
 
 ## Overview: 
+
 Key Features:
+
 📚 QuoteHub implements a many-to-many relationship with the ASP.NET Identity system and custom tables. 
+
 🔍 Search: Easily find quotes by author or keywords.
+
 📚 Collection: Explore quotes across 11 different categories.
+
 💼 User Accounts: Register, log in securely, and save your favorite quotes. Implemented JWT authentication to authenticate users.
+
 🔄 Pagination: Navigate seamlessly through our extensive collection.
 
 
