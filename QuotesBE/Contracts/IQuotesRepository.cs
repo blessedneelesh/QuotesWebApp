@@ -15,6 +15,7 @@ namespace Contracts
         List<CategoryDTO> GetCategory();
         PagedList<QuoteDTO> SearchQuote(SearchParameter searchParameters);
         PagedList<UserQuoteDTO> GetFavourite(FavouriteParameters favouriteParameters);
-       void PostFavourite(UserQuoteCreationDTO value);
+        void PostFavourite(UserQuoteCreationDTO value);
+        void DeleteFavourite(UserQuoteCreationDTO value);
     }
 }

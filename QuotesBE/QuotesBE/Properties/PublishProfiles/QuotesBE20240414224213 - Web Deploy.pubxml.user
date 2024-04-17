@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANbaAI2SqIUWiXNLat9dnPQAAAAACAAAAAAAQZgAAAAEAACAAAAABMpnw+GhrTKlKAogIa6aFIt6nqa3FZ28zR4PMzEDSEQAAAAAOgAAAAAIAACAAAADAdv4cj+8QJNDrMzGmNtfhXV6R/NaeCYond/Qo6Z7MPIAAAABxImSPdWoAwzLpOEdlXVYREJrhR6HSmaNCWmMSl3OOAya+aab6gl+LmQJVfxw6JYQ++hpC2heVO99RIWvaQQe7zJFr5p+GsKGyBQRppwW/hCNxLn7t2vUnqAiOYEGi8pgOaviwGiCQw7x6XyhiNJbBx+snR961rjBt/6mpLySkpUAAAAB6dZMMs6DQDXW5IWI8y9P7GydKIPDZ1CObeNQyC8BzgPePIE8zYbB0BuWNLAgsaIf5VHaJkShXbyd3DueHrM/v</EncryptedPassword>
+    <History>True|2024-04-15T02:53:01.7689179Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:quotesbedbserver.database.windows.net,1433%3bInitial Catalog=QuotesBE_db%3bUser Id=neelesh%40quotesbedbserver%3bPassword=Canada%402022</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

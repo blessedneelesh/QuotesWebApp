@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Repository
 {
@@ -105,16 +106,40 @@ namespace Repository
 
         public PagedList<UserQuoteDTO> GetFavourite(FavouriteParameters favouriteParameters)
         {
-            var lst = (from n in dbContext.UserQuotes
-                       join m in dbContext.Quotesses on
-                       n.QuoteId equals m.QuoteId
-                       where n.UserrId == favouriteParameters.user_id
-                       select new UserQuoteDTO
-                       {
-                           userId = n.UserrId,
-                           quoteId = n.QuoteId,
-                           quoteContent=m.QuoteContent
-                       }).ToList();
+            //IQueryable<Quotess> query = dbContext.Quotesses;
+            var lst = new List<UserQuoteDTO> { };
+
+            if ((favouriteParameters.category_id).HasValue)
+            {
+                 lst = (from n in dbContext.UserQuotes
+                           join m in dbContext.Quotesses on
+                           n.QuoteId equals m.QuoteId
+                           where n.UserrId == favouriteParameters.user_id && m.CategoryIdFk==favouriteParameters.category_id
+                           select new UserQuoteDTO
+                           {
+                               userId = n.UserrId,
+                               quoteId = n.QuoteId,
+                               quoteContent = m.QuoteContent,
+                               author=m.Author
+
+                           }).ToList();
+            }
+            else
+            {
+                 lst = (from n in dbContext.UserQuotes
+                           join m in dbContext.Quotesses on
+                           n.QuoteId equals m.QuoteId
+                           where n.UserrId == favouriteParameters.user_id
+                           select new UserQuoteDTO
+                           {
+                               userId = n.UserrId,
+                               quoteId = n.QuoteId,
+                               quoteContent = m.QuoteContent,
+                               author=m.Author
+                           }).ToList();
+            }
+
+         
             return PagedList<UserQuoteDTO>.ToPagedList(lst, favouriteParameters.PageNumber, favouriteParameters.PageSize);
         }
 
@@ -124,5 +149,16 @@ namespace Repository
             dbContext.UserQuotes.Add(userQuote);
             dbContext.SaveChanges();
         }
+
+        public void DeleteFavourite(UserQuoteCreationDTO value)
+        {
+            var selectedQuote = (from quote in dbContext.UserQuotes
+                                where quote.UserrId == value.user_id && quote.QuoteId == value.quote_id
+                                select quote).Single();
+
+            dbContext.UserQuotes.Remove(selectedQuote);
+            dbContext.SaveChanges();
+        }
+             
     }
 }

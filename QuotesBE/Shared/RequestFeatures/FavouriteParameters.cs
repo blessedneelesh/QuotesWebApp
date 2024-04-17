@@ -9,5 +9,6 @@ namespace Shared.RequestFeatures
     public class FavouriteParameters:RequestParameters
     {
         public string user_id { get; set; } 
+        public int? category_id { get; set; }
     }
 }

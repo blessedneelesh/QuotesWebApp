@@ -11,7 +11,7 @@ namespace Shared.DataTransferObjects
         public string userId { get;set; }
         public int quoteId { get; set; }
         public string quoteContent { get; set; }
-
+        public string author { get; set; }
         public UserQuoteDTO() { }
 
         public UserQuoteDTO(string userId, int quoteId) {   
@@ -19,11 +19,12 @@ namespace Shared.DataTransferObjects
             this.quoteId = quoteId;
         }
 
-        public UserQuoteDTO(string userId, int quoteId,string quoteContent)
+        public UserQuoteDTO(string userId, int quoteId,string quoteContent,string author)
         {
             this.userId = userId;
             this.quoteId = quoteId;
             this.quoteContent = quoteContent;
+            this.author = author;
         }
     }
 }

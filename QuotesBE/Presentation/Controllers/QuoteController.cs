@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -93,6 +94,7 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetFavourite([FromQuery] FavouriteParameters favouriteParameters)
         {
             try
@@ -110,6 +112,7 @@ namespace Presentation.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult<UserQuoteDTO> Favourite([FromBody] UserQuoteCreationDTO value)
         {
             try
@@ -121,6 +124,27 @@ namespace Presentation.Controllers
             {
                 return StatusCode(500, "Internal server error");
             }
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult DeleteFavourite([FromBody] UserQuoteCreationDTO value)
+        {
+            /*            var quote = _service.QuoteService.GetQuote(id);
+                        if (quote == null)
+                        {
+                            return NotFound();
+                        }*/
+            try
+            {
+                _service.QuoteService.deleteFavourite(value);
+                return NoContent(); //No content returns 204 status code.
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Internal server error");
+            }
+
         }
     }
 }

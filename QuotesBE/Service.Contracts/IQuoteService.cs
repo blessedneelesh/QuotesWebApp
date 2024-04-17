@@ -16,5 +16,6 @@ namespace Service.Contracts
         (List<QuoteDTO> quote, MetaData metaData) GetSearchResult(SearchParameter searchParameters);
        (List<UserQuoteDTO> quote, MetaData metaData) GetUserFavourite(FavouriteParameters favouriteParameters);
         UserQuoteDTO CreateUserQuote(UserQuoteCreationDTO value);
+        void deleteFavourite(UserQuoteCreationDTO value);
     }
 }

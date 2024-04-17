@@ -109,5 +109,19 @@ namespace Service
                 throw;
             }
         }
+
+        public void deleteFavourite(UserQuoteCreationDTO value)
+        {
+            try
+            {
+                _repository.Quote.DeleteFavourite(value);
+              
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Something went wrong in the " + nameof(CreateUserQuote) + " service method " + ex);
+                throw;
+            }
+        }
     }
 }

@@ -1,0 +1,17 @@
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\LoggerService.deps.json
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\LoggerService.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\LoggerService.pdb
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\Contracts.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\Shared.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\Contracts.pdb
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\bin\Release\net6.0\Shared.pdb
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.csproj.AssemblyReference.cache
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.GeneratedMSBuildEditorConfig.editorconfig
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.AssemblyInfoInputs.cache
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.AssemblyInfo.cs
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.csproj.CoreCompileInputs.cache
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.csproj.CopyComplete
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\refint\LoggerService.dll
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\LoggerService.pdb
+D:\quotes\quotesWebApp\QuotesBE\LoggerService\obj\Release\net6.0\ref\LoggerService.dll

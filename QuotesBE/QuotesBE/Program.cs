@@ -27,7 +27,7 @@ builder.Services.ConfigureCors();
 builder.Services.AddControllers().AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
 
 builder.Services.AddDbContext<QuotesContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("QuoteContext"),
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
     sqlServerOptionsAction: sqlOptions => // by neelesh transient failure because of no db.
     {
         sqlOptions.EnableRetryOnFailure();

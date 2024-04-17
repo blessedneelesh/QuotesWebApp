@@ -1,9 +1,13 @@
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Presentation.deps.json
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Presentation.pdb
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.dll
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Service.Contracts.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Shared.dll
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.pdb
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Service.Contracts.pdb
+D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.pdb
 D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Shared.pdb
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.csproj.AssemblyReference.cache
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
@@ -15,7 +19,3 @@ D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\refint\Presentation.dll
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\Presentation.pdb
 D:\quotes\quotesWebApp\QuotesBE\Presentation\obj\Debug\net6.0\ref\Presentation.dll
-D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.dll
-D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.dll
-D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Repository.pdb
-D:\quotes\quotesWebApp\QuotesBE\Presentation\bin\Debug\net6.0\Contracts.pdb
