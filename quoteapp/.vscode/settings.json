@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/b1187231-1531-4531-b294-4973aa9defca/resourceGroups/QuoteResources/providers/Microsoft.Web/sites/goodreads",
+    "appService.deploySubpath": "build"
+}

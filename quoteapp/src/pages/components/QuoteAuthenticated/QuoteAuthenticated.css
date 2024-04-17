@@ -1,0 +1,15 @@
+.quoteContainer {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  margin-top: 3.5rem;
+
+  flex-wrap: wrap;
+}
+
+.blockquote p {
+  font-size: 0.9rem;
+}
+.blockquote-footer {
+  font-size: 0.7rem;
+}

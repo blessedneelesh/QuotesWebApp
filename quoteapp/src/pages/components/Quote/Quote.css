@@ -1,0 +1,38 @@
+.quoteContainer {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  margin-top: 3.5rem;
+
+  flex-wrap: wrap;
+}
+
+.blockquote p {
+  font-size: 0.9rem;
+}
+.blockquote-footer {
+  font-size: 0.7rem;
+}
+.pin {
+  background-color: red;
+}
+.highlight {
+  background-color: yellow;
+}
+.message {
+  position: fixed;
+  margin-top: "200px";
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: -webkit-translate(-50%, -50%);
+  transform: -moz-translate(-50%, -50%);
+  transform: -ms-translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  z-index: 1000;
+  padding: 0rem !important;
+}
+div[disabled] {
+  pointer-events: none;
+  /* opacity: 0.7; */
+}

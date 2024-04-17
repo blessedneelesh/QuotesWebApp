@@ -1,0 +1,12 @@
+.register {
+  margin-top: 4rem;
+  padding: 1rem;
+}
+.error {
+  color: rgb(184, 16, 16);
+  /* font-size: 0.8rem; */
+}
+
+.success {
+  color: rgb(14, 139, 14);
+}
